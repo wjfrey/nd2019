@@ -16,47 +16,67 @@
     <div class="gifts-available">
       <p>Diese Geschenke sind noch nicht vergeben:</p>
       <div class="list">
-        <% @available_presents.each do |present| %>
-          <div class="list-item">
-            <div class="image-div" style="background-image: url('<%= present.pic %>');">
-            </div>
-            <div class="gift-content">
-              <h2><%= present.title %></h2>
-              <a href="<%= present.link %>" target="_blank" >
-                <i class="fas fa-heart"></i>
-                <span>Link zum Geschenk</span>
-              </a>
-              <br>
-              <div data-toggle="modal" data-target="#reserveModal">
-                <%= link_to '#' do %>
-                  <i class="fas fa-check-square"></i>
-                  <span>Geschenk als vergeben markieren</span>
-                <% end %>
+        <% if @available_presents.empty? %>
+        <div class="list-item">
+          <h2>Alle Geschenke sind leider schon reserviert.</h2>
+        </div>
+        <% else %>
+          <div>
+            <% @available_presents.each do |present| %>
+              <div class="list-item">
+                <div class="image-div" style="background-image: url('<%= present.pic %>');">
+                </div>
+                <div class="gift-content">
+                  <h2><%= present.title %></h2>
+                  <a href="<%= present.link %>" target="_blank" >
+                    <i class="fas fa-heart"></i>
+                    <span>Link zum Geschenk</span>
+                  </a>
+                  <br>
+                  <div data-toggle="modal" data-target="#reserveModal">
+                    <%= link_to '#' do %>
+                      <i class="fas fa-check-square"></i>
+                      <span>Geschenk als vergeben markieren</span>
+                    <% end %>
+                  </div>
+                  <%= render 'components/reserve_modal', present: present %>
+                </div>
               </div>
-              <%= render 'components/reserve_modal', present: present %>
-            </div>
+            <% end %>
           </div>
         <% end %>
-        <p>Diese Geschenke werden schon verschenkt:</p>
-        <% @taken_presents.each do |present| %>
-          <div class="list-item">
-            <div class="image-div" style="background-image: url('<%= present.pic %>');">
-            </div>
-            <div class="gift-content">
-              <h2><%= present.title %></h2>
-              <%= link_to '#' do %>
-                <i class="fas fa-heart"></i>
-                <span>Link zum Geschenk</span>
-              <% end %>
-              <br>
-              <%= link_to '#' do %>
-                <i class="fas fa-check-square"></i>
-                <span>Dieses Geschenk wird verschenkt!</span>
-              <% end %>
-            </div>
+        <% unless @taken_presents.empty? %>
+          <p class="margin-top-30">Diese Geschenke werden schon verschenkt:</p>
+          <div>
+            <% @taken_presents.each do |present| %>
+              <div class="list-item reserved">
+                <div class="image-div" style="background-image: url('<%= present.pic %>');">
+                </div>
+                <div class="gift-content">
+                  <h2><%= present.title %></h2>
+                  <%= link_to '#' do %>
+                    <i class="fas fa-heart"></i>
+                    <span>Link zum Geschenk</span>
+                  <% end %>
+                  <br>
+                  <div class="reserved-message">
+                    <i class="fas fa-check-square"></i>
+                    <span>Dieses Geschenk wird verschenkt!</span>
+                  </div>
+                </div>
+                <div data-toggle="modal" data-target="#unreserveModal">
+                  <a href="#">
+                    <span class="unreserve-link">Reservierung zurücknehmen?</span>
+                  </a>
+                </div>
+              </div>
+            <% end %>
           </div>
+          <% @taken_presents.each do |present| %>
+            <%= render 'components/unreserve_modal', present: present %>
+          <% end %>
         <% end %>
-      </div>
+        </div>
     </div>
   </div>
 </div>
