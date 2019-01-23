@@ -1,0 +1,70 @@
+.modal-header {
+  border-bottom: none;
+  padding: 0.5rem 0.5rem 0;
+  button {
+    color: $wedding-pink;
+    opacity: 1;
+    font-weight: 400;
+  }
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-body {
+  padding: 0 16px !important;
+  h3 {
+    font-weight: 400;
+  }
+}
+
+#entry_title, #entry_description, #entry_date_1i, #entry_date_2i, #entry_date_3i, #entry_location {
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 0.5px solid $wedding-pink;
+  padding: 0;
+}
+
+.entry_date {
+  border-bottom: 0.5px solid $wedding-pink;
+}
+
+.entry_time {
+  margin-bottom: 3px;
+  padding: 0;
+}
+
+.bottom-border {
+  border-bottom: 0.5px solid $wedding-pink;
+  margin-bottom: 1rem;
+}
+
+#entry_date_1i, #entry_date_2i, #entry_date_3i, #entry_time_4i, #entry_time_5i {
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+}
+
+.form-control-label.white-form {
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: $wedding-pink;
+}
+
+.form-control-label.red-form {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  &> * {
+  margin: 10px 0 20px;
+  }
+}

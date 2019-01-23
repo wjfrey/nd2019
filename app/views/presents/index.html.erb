@@ -22,15 +22,18 @@
             </div>
             <div class="gift-content">
               <h2><%= present.title %></h2>
-              <a href="<%= present.link %>">
+              <a href="<%= present.link %>" target="_blank" >
                 <i class="fas fa-heart"></i>
                 <span>Link zum Geschenk</span>
               </a>
               <br>
-              <%= link_to '#' do %>
-                <i class="fas fa-check-square"></i>
-                <span>Geschenk als vergeben markieren</span>
-              <% end %>
+              <div data-toggle="modal" data-target="#reserveModal">
+                <%= link_to '#' do %>
+                  <i class="fas fa-check-square"></i>
+                  <span>Geschenk als vergeben markieren</span>
+                <% end %>
+              </div>
+              <%= render 'components/reserve_modal', present: present %>
             </div>
           </div>
         <% end %>
