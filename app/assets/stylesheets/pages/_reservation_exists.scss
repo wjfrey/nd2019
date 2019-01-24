@@ -1,0 +1,10 @@
+.error-flexbox {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  a {
+    width: 200px;
+    margin: 0 auto;
+  }
+}

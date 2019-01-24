@@ -10,17 +10,15 @@
       <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168854/nd2019/noun_wedding_rings_556715.svg', alt: "wedding-rings" %>
       <span> DAVID | BERLIN 2019</span>
     </div>
-    <p>Wenn ihr uns etwas schenken möchtet, dann würden wir uns über einen Beitrag zu unseren Flitterwochen freuen. Ein paar andere Dinge, mit denen ihr uns eine Freude machen könnt, findet ihr hier: </p>
+    <p>Wenn ihr uns etwas schenken möchtet, dann würden wir uns über einen Beitrag zu unseren Flitterwochen freuen. Ein paar andere Dinge, mit denen ihr uns eine Freude machen könnt, findet ihr hier. </p>
   </div>
   <div class="content">
     <div class="gifts-available">
-      <p class="regular-font-weight increase-margin-mobile">Diese Geschenke sind noch nicht vergeben:</p>
       <div class="list">
         <% if @available_presents.empty? %>
-        <div class="list-item">
-          <h2>Alle Geschenke sind leider schon reserviert.</h2>
-        </div>
+          <h2 class="thin-font-weight no-top-margin">Alle Geschenke sind leider schon reserviert.</h2>
         <% else %>
+          <p class="regular-font-weight increase-margin-mobile">Diese Geschenke sind noch nicht vergeben:</p>
           <div>
             <% @available_presents.each do |present| %>
               <div class="list-item">

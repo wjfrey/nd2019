@@ -8,9 +8,20 @@ class PresentsController < ApplicationController
     @present = Present.find(params[:id])
     if @present.available
       @present.available = false
+      @present.save
+      redirect_to root_path
     else
-      @present.available = true
+      redirect_to reservation_exists_path(@present)
     end
+  end
+
+  def reservation_exists
+    @present = Present.find(params[:id])
+  end
+
+  def unreserve
+    @present = Present.find(params[:id])
+    @present.available = true
     @present.save
     redirect_to root_path
   end
