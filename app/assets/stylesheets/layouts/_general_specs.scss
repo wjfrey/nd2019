@@ -29,7 +29,14 @@ h4, h5, p {
 
 a {
   &:hover {
-  text-decoration: none;
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+    color: $wedding-pink;
   }
 }
 
