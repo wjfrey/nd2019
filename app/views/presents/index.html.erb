@@ -24,7 +24,7 @@
           <div>
             <% @available_presents.each do |present| %>
               <div class="list-item">
-                <div class="image-div" style="background-image: url('<%= present.pic %>');">
+                <div class="image-div" style="background-image: url('<%= cl_image_path present.photo %>');">
                 </div>
                 <div class="gift-content">
                   <h2><%= present.title %></h2>
@@ -33,7 +33,7 @@
                     <span>Link zum Geschenk</span>
                   </a>
                   <br>
-                  <div class="modal-btn" data-toggle="modal" data-target="#reserveModal">
+                  <div class="modal-btn" data-toggle="modal" data-target="#reserveModal_<%= present.id %>">
                     <%= link_to '#' do %>
                       <i class="fas fa-check-square"></i>
                       <span>Geschenk als vergeben markieren</span>
@@ -50,7 +50,7 @@
           <div>
             <% @taken_presents.each do |present| %>
               <div class="list-item reserved">
-                <div class="image-div" style="background-image: url('<%= present.pic %>');">
+                <div class="image-div" style="background-image: url('<%= cl_image_path present.photo %>');">
                 </div>
                 <div class="gift-content">
                   <h2><%= present.title %></h2>
@@ -64,7 +64,7 @@
                     <span>Dieses Geschenk wird verschenkt!</span>
                   </div>
                 </div>
-                <div class="modal-btn" data-toggle="modal" data-target="#unreserveModal">
+                <div class="modal-btn" data-toggle="modal" data-target="#unreserveModal_<%= present.id %>">
                   <a href="#">
                     <span class="unreserve-link">Reservierung zurücknehmen?</span>
                   </a>

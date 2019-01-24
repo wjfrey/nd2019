@@ -1,0 +1,25 @@
+<div class="container">
+  <%= simple_form_for(@present) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :link %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <div class="form-actions">
+      <%= f.button :submit, "Geschenk erstellen", class:'btn-first-choice' %>
+    </div>
+  <% end %>
+  <p class="regular-font-weight increase-margin-mobile margin-top-30">Diese Geschenke sind noch nicht vergeben:</p>
+  <% @available_presents.each do |present| %>
+    <div class="list-item">
+      <div class="image-div" style="background-image: url('<%= cl_image_path present.photo %>');">
+      </div>
+      <div class="gift-content">
+        <h2><%= present.title %></h2>
+        <%= link_to "Geschenk löschen", present_path(present),
+              method: :delete,
+              data: { confirm: "Bist du sicher, dass du dieses Geschenk wieder löschen möchtest?" } %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to 'Zurück zur Startseite', root_path, class:'btn-first-choice margin-top-30' %>
+</div>
