@@ -35,8 +35,8 @@
                   <br>
                   <div class="modal-btn" data-toggle="modal" data-target="#reserveModal_<%= present.id %>">
                     <%= link_to '#' do %>
-                      <i class="fas fa-check-square"></i>
-                      <span>Geschenk als vergeben markieren</span>
+                      <i class="far fa-check-square"></i>
+                      <span>Geschenk für mich reservieren</span>
                     <% end %>
                   </div>
                   <%= render 'components/reserve_modal', present: present %>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="modal-btn" data-toggle="modal" data-target="#unreserveModal_<%= present.id %>">
                   <a href="#">
-                    <span class="unreserve-link">Reservierung zurücknehmen?</span>
+                    <span class="unreserve-link">Reservierung zurückziehen?</span>
                   </a>
                 </div>
               </div>
