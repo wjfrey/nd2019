@@ -1,9 +1,9 @@
 <div class="custom-box">
   <div class="header">
     <div>
-      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168325/nd2019/heart_1.png', alt: "heart" %>
-      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168391/nd2019/heart_2.png', alt: "heart" %>
-      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168392/nd2019/heart_3.png', alt: "heart" %>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168325/nd2019/heart_1.png', alt: "heart", id: "heart_1" %>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168391/nd2019/heart_2.png', alt: "heart", id: "heart_2"  %>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168392/nd2019/heart_3.png', alt: "heart", id: "heart_3"  %>
     </div>
     <div class="header-title">
       <span>NORA </span>
@@ -14,7 +14,7 @@
   </div>
   <div class="content">
     <div class="gifts-available">
-      <p>Diese Geschenke sind noch nicht vergeben:</p>
+      <p class="regular-font-weight increase-margin-mobile">Diese Geschenke sind noch nicht vergeben:</p>
       <div class="list">
         <% if @available_presents.empty? %>
         <div class="list-item">
@@ -46,7 +46,7 @@
           </div>
         <% end %>
         <% unless @taken_presents.empty? %>
-          <p class="margin-top-30">Diese Geschenke werden schon verschenkt:</p>
+          <p class="margin-top-30 regular-font-weight mobile-margin-top-100">Diese Geschenke werden schon verschenkt:</p>
           <div>
             <% @taken_presents.each do |present| %>
               <div class="list-item reserved">
@@ -78,5 +78,18 @@
         <% end %>
         </div>
     </div>
+  </div>
+  <div class="footer">
+    <div>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168325/nd2019/heart_1.png', alt: "heart"%>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168391/nd2019/heart_2.png', alt: "heart"%>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168392/nd2019/heart_3.png', alt: "heart"%>
+    </div>
+    <div class="footer-title">
+      <span>NORA </span>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548168854/nd2019/noun_wedding_rings_556715.svg', alt: "wedding-rings", id: "small-rings" %>
+      <span> DAVID | BERLIN 2019</span>
+    </div>
+
   </div>
 </div>
