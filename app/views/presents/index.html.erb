@@ -50,6 +50,7 @@
             <% @taken_presents.each do |present| %>
               <div class="list-item reserved">
                 <div class="image-div" style="background-image: url('<%= cl_image_path present.photo %>');">
+                  <i class="fas fa-check"></i>
                 </div>
                 <div class="gift-content">
                   <h2><%= present.title %></h2>

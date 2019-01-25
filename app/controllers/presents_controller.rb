@@ -1,7 +1,7 @@
 class PresentsController < ApplicationController
   def index
-    @available_presents = Present.all.select(&:available)
-    @taken_presents = Present.all.reject(&:available)
+    @available_presents = Present.order('created_at asc').select(&:available)
+    @taken_presents = Present.order('updated_at desc').reject(&:available)
   end
 
   def reserve

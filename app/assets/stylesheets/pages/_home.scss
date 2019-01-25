@@ -5,7 +5,7 @@ body {
 
 p, h2 {
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .custom-box {
@@ -75,7 +75,7 @@ p, h2 {
 
 .list-item.reserved {
   position: relative;
-  opacity: 0.3;
+  opacity: 0.5;
   .reserved-message {
     i, span {
       font-size: 15px;
@@ -89,13 +89,20 @@ p, h2 {
   background-color: $wedding-beige;
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    font-size: 50px;
+    color: white;
+  }
 }
 
 .gift-content {
   margin-left: 23px;
   span {
     margin-left: 5px;
-    font-weight: 200;
+    font-weight: 400;
   }
   .fa-check-square {
     margin-left: 1px;
@@ -108,8 +115,11 @@ p, h2 {
 
 a {
   font-size: 15px;
-  font-weight: 100;
+  font-weight: 400;
   color: $letter-gray;
+  &:focus {
+    color: $letter-gray;
+  }
   &:hover {
     text-decoration: none;
     color: $wedding-pink;
