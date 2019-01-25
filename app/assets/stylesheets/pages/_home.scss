@@ -102,6 +102,10 @@ p, h2 {
   }
 }
 
+.hover-show {
+  display: none;
+}
+
 a {
   font-size: 15px;
   font-weight: 100;
@@ -109,6 +113,13 @@ a {
   &:hover {
     text-decoration: none;
     color: $wedding-pink;
+    .hover-show {
+      display: inline;
+      margin-right: -1px;
+    }
+    .hover-no-show {
+      display: none;
+    }
   }
 }
 

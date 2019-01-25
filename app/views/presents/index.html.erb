@@ -33,7 +33,8 @@
                   <br>
                   <div class="modal-btn" data-toggle="modal" data-target="#reserveModal_<%= present.id %>">
                     <%= link_to '#' do %>
-                      <i class="far fa-check-square"></i>
+                      <i class="far fa-square hover-no-show"></i>
+                      <i class="fas fa-check-square hover-show"></i>
                       <span>Geschenk für mich reservieren</span>
                     <% end %>
                   </div>
@@ -52,10 +53,10 @@
                 </div>
                 <div class="gift-content">
                   <h2><%= present.title %></h2>
-                  <%= link_to '#' do %>
+                  <a href="<%= present.link %>" target="_blank" >
                     <i class="fas fa-heart"></i>
                     <span>Link zum Geschenk</span>
-                  <% end %>
+                  </a>
                   <br>
                   <div class="reserved-message">
                     <i class="fas fa-check-square"></i>
