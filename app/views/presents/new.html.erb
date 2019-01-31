@@ -11,8 +11,10 @@
   <p class="regular-font-weight increase-margin-mobile margin-top-30">Diese Geschenke sind noch nicht vergeben:</p>
   <% @available_presents.each do |present| %>
     <div class="list-item">
+      <% unless present.photo.blank? %>
       <div class="image-div" style="background-image: url('<%= cl_image_path present.photo %>');">
       </div>
+      <% end %>
       <div class="gift-content">
         <h2><%= present.title %></h2>
         <%= link_to "Geschenk löschen", present_path(present),

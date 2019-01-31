@@ -1,9 +1,9 @@
 <div class="custom-box">
   <div class="header">
     <div>
-      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548503537/nd2019/hear_4.jpg', alt: "heart", id: "heart_1" %>
-      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548503787/nd2019/hear_5.jpg', alt: "heart", id: "heart_2"  %>
-      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548503345/nd2019/hear_3.jpg', alt: "heart", id: "heart_3"  %>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548961629/nd2019/heart_new_online_1.png', alt: "heart", id: "heart_1" %>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548961514/nd2019/heart_new_online_2.png', alt: "heart", id: "heart_2"  %>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548961406/nd2019/heart_new_online_3.png', alt: "heart", id: "heart_3"  %>
     </div>
     <div class="header-title">
       <span>NORA </span>
@@ -22,8 +22,13 @@
           <div>
             <% @available_presents.each do |present| %>
               <div class="list-item">
-                <div class="image-div" style="background-image: url('<%= cl_image_path present.photo %>');">
-                </div>
+                <% unless present.photo.blank? %>
+                  <div class="image-div" style="background-image: url('<%= cl_image_path present.photo %>');">
+                  </div>
+                <% else %>
+                  <div class="image-div" style="background-image: url('https://res.cloudinary.com/dqxb19mjv/image/upload/v1548960846/nd2019/present_placeholder.jpg');">
+                  </div>
+                <% end %>
                 <div class="gift-content">
                   <h2><%= present.title %></h2>
                   <a href="<%= present.link %>" target="_blank" >
@@ -49,9 +54,15 @@
           <div>
             <% @taken_presents.each do |present| %>
               <div class="list-item reserved">
-                <div class="image-div" style="background-image: url('<%= cl_image_path present.photo %>');">
-                  <i class="fas fa-check"></i>
-                </div>
+                <% unless present.photo.blank? %>
+                  <div class="image-div" style="background-image: url('<%= cl_image_path present.photo %>');">
+                    <i class="fas fa-check"></i>
+                  </div>
+                <% else %>
+                    <div class="image-div" style="background-image: url('https://res.cloudinary.com/dqxb19mjv/image/upload/v1548960846/nd2019/present_placeholder.jpg');">
+                      <i class="fas fa-check"></i>
+                    </div>
+                <% end %>
                 <div class="gift-content">
                   <h2><%= present.title %></h2>
                   <a href="<%= present.link %>" target="_blank" >
@@ -81,9 +92,9 @@
   </div>
   <div class="footer">
     <div>
-      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548503537/nd2019/hear_4.jpg', alt: "heart"%>
-      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548503346/nd2019/hear_2.jpg', alt: "heart"%>
-      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548503345/nd2019/hear_3.jpg', alt: "heart"%>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548961629/nd2019/heart_new_online_1.png', alt: "heart"%>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548961514/nd2019/heart_new_online_2.png', alt: "heart"%>
+      <%= image_tag 'https://res.cloudinary.com/dqxb19mjv/image/upload/v1548961406/nd2019/heart_new_online_3.png', alt: "heart"%>
     </div>
     <div class="footer-title">
       <span>NORA </span>
